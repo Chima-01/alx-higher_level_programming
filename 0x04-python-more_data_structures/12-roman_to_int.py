@@ -32,5 +32,8 @@ def roman_to_int(roman_string):
                 value += roman_val[i]
 
         return value
+
+    elif not isinstance(roman_string, str):
+        return 0
     else:
         return 0
