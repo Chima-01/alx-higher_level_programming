@@ -18,21 +18,19 @@ def roman_to_int(roman_string):
             if roman_num[key]:
                 roman_val.append(roman_num[key])
             else:
-                return None
+                return 0
 
         length = len(roman_val)
-        if length % 2 != 0:
-            roman_val.append(0)
+        roman_val.append(0)
 
-        diff, value = 0, 0
+        value = 0
 
-        for i in range(0, length, 2):
+        for i in range(length):
             if roman_val[i] < roman_val[i + 1]:
-                diff = roman_val[i + 1] - roman_val[i]
+                value -= roman_val[i]
             else:
-                diff = roman_val[i] + roman_val[i + 1]
-            value += diff
+                value += roman_val[i]
 
         return value
     else:
-        return None
+        return 0
