@@ -1,8 +1,13 @@
 #!/usr/bin/python3
 
 def roman_to_int(roman_string):
-    if roman_string:
+    if not roman_string:
+        return 0
 
+    elif not isinstance(roman_string, str):
+        return 0
+
+    else:
         roman_num = {
                 'M': 1000,
                 'D': 500,
@@ -32,8 +37,3 @@ def roman_to_int(roman_string):
                 value += roman_val[i]
 
         return value
-
-    elif not isinstance(roman_string, str):
-        return 0
-    else:
-        return 0
