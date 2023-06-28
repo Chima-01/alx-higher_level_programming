@@ -5,9 +5,9 @@
 class Square:
     """
     Atrributes:
-    __size:size of square
+    size:size of square
     value: property setter
-    __position: handle tuples
+    position: handle tuples
     """
 
     def __init__(self, size=0, position=(0, 0)):
