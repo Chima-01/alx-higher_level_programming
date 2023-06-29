@@ -4,6 +4,11 @@ import math
 
 
 class MagicClass:
+    """
+        Attribute:
+            area: area of circle
+            circumference: perimter of circle
+    """
 
     def __init__(self, radius=0):
         self.__radius = 0
