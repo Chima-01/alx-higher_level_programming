@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import math
-""" magic class """
+"""int: module math """
 
 
 class MagicClass:
@@ -9,7 +9,6 @@ class MagicClass:
             area: area of circle
             circumference: perimter of circle
     """
-
     def __init__(self, radius=0):
         self.__radius = 0
 
