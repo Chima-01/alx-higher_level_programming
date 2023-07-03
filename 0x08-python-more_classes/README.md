@@ -1,13 +1,13 @@
 # Object Oriented Programming (OOP)
 
 ### Instance Variable
-Instance variables declared with a method
+Instance variables declared within a method
 
 ### Class Variable
-class variables are declared within a class so i can be accessed by all method
+class variables are declared within a class, so it can be accessed by all method
 
 ### Object
-Objects are variables which as an instance to a class
+Objects are variables which (acts as or is) an instance to a class
 
 ### Methods
 ### Attributes
