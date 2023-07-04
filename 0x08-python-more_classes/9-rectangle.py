@@ -14,6 +14,7 @@ class Rectangle:
             height(int): height of rectangle
     """
     number_of_instances = 0
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         self.width = width
@@ -60,12 +61,13 @@ class Rectangle:
 
     def __str__(self):
         b = ""
+        c = self.print_symbol
 
         if self.width == 0 or self.height == 0:
             return b
 
         for i in range(self.height):
-            b += '#' * self.width
+            b += str(c) * self.width
             if i != self.height - 1:
                 b += '\n'
 
@@ -80,3 +82,27 @@ class Rectangle:
 
         """ subtract 1 from it when an obj is deleted"""
         Rectangle.number_of_instances -= 1
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+
+        area1 = rect_1.area()
+        area2 = rect_2.area()
+
+        if area1 == area2:
+            return rect_1
+        elif area1 < area2:
+            return rect_2
+        else:
+            return rect_1
+
+    @classmethod
+    def square(cls, size=0):
+        sq = Rectangle()
+        sq.width = size
+        sq.height = size
+        return sq
