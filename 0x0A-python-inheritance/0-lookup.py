@@ -6,5 +6,7 @@
 
 
 def lookup(obj):
+    """ Argument Obj an instance of a class """
+
     if obj:
         return dir(obj)
