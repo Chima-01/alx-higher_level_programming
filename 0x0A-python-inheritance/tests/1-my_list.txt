@@ -43,8 +43,6 @@ Case 2
 ======
 Case 3
 ======
->>> isinstance(my_list, MyList)
-True
 >>> isinstance(my_list, list)
 True
 >>> issubclass(type(my_list), list)
@@ -55,5 +53,3 @@ Case 4
 =======
 >>> type(my_list)
 <class '1-my_list.MyList'>
-
-
