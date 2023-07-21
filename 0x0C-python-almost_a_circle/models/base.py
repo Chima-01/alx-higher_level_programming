@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Creating a class called base"""
 import json
+import os
 
 
 class Base:
@@ -28,12 +29,14 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """ save a list to a file in json"""
-        fi = cls.__name__ + ".json"
-        content = []
-        j_obj = cls.to_json_string(list_objs)
-
-        with open(fi, "w", encoding="utf-8") as f:
-            f.write(j_obj)
+        if list_objs is None:
+            list_o = []
+        else:
+            fi = cls.__name__ + ".json"
+            list_o = [i.to_dictionary() for i in list_objs]
+            j_obj = cls.to_json_string(list_o)
+            with open(fi, "w", encoding="utf-8") as f:
+                f.write(j_obj)
 
     @staticmethod
     def from_json_string(json_string):
@@ -41,3 +44,31 @@ class Base:
         if json_string is None or json_string == "":
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ Return instance with attribute set"""
+        from models.rectangle import Rectangle
+        from models.square import Square
+
+        if cls is Square:
+            dummy = cls(1)
+        elif cls is Rectangle:
+            dummy = cls(1, 1)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """returns list of instances"""
+        file_name = cls.__name__ + ".json"
+        if not os.path.exists(file_name):
+            return []
+        with open(file_name, "r", encoding="utf-8") as f:
+            data = f.read()
+            if not data or data == "[]":
+                return []
+            ins = []
+            [ins.append(cls.create(**d)) for d in
+             cls.from_json_string(data)]
+            return ins

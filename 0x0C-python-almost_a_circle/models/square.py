@@ -43,6 +43,6 @@ class Square(Rectangle):
                 setattr(self, k, v)
 
     def to_dictionary(self):
-       """returns square in dict type"""
-       return {"id": self.id, "x": self.x, "size": self.size,
-               "y": self.y}
+        """returns square in dict type"""
+        return {"id": self.id, "x": self.x, "size": self.size,
+                "y": self.y}
