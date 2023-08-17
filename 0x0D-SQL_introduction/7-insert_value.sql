@@ -1,2 +1,2 @@
--- inserts new ole to table
-UPDATE first_table SET id = 89, name = 'Best School';
+-- inserts new rows to table
+INSERT INTO first_table VALUES(89, 'Best School');
