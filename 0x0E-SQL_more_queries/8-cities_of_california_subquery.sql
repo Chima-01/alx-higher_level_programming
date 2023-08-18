@@ -1,0 +1,1 @@
+-- list all cities that can be found in database
