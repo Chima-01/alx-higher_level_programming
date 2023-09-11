@@ -1,4 +1,4 @@
-#INRODUCTION TO JAVASCRIPT
+# INRODUCTION TO JAVASCRIPT
 A Scripting Language used to create and manage dynamic web pages, Games.
 
 
