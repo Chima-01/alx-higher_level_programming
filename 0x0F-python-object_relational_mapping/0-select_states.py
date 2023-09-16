@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Connecting to my local database and list staes in that database """
 import MySQLdb
+import sys
 
 if __name__ == "__main__":
     mydb = MySQLdb.connect(
