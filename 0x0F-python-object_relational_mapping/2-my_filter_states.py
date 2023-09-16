@@ -16,8 +16,8 @@ if __name__ == "__main__":
         )
 
         mycursor = mydb.cursor()
-        sql = "SELECT * FROM states WHERE name = %s ORDER BY states.id;"
-        mycursor.execute(sql, (sys.argv[4],))
+        sql = "SELECT * FROM states WHERE name = '{}' ORDER BY states.id;".format(sys.argv[4])
+        mycursor.execute(sql)
 
         querry = mycursor.fetchall()
 
