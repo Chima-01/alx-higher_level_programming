@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Connecting to my local database and list staes in that database """
 import MySQLdb
 
 mydb = MySQLdb.connect(
