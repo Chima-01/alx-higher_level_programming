@@ -14,12 +14,9 @@ if __name__ == "__main__":
     )
     mycursor = mydb.cursor()
 
-    sql = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY \
-            states.id;".format(
-        sys.argv[4]
-    )
+    sql = "SELECT * FROM states WHERE BINARY name = %s ORDER BY states.id;"
 
-    mycursor.execute(sql)
+    mycursor.execute(sql, (sys.argv[4],))
 
     querry = mycursor.fetchall()
 
