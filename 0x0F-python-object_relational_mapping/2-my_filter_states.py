@@ -4,7 +4,7 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    try:
+    if sys.rgv[4]:
         mydb = MySQLdb.connect(
             host="localhost",
             port=3306,
@@ -15,7 +15,8 @@ if __name__ == "__main__":
         )
         mycursor = mydb.cursor()
 
-        sql = "SELECT * FROM states WHERE name = '{}' ORDER BY states.id;".format(
+        sql = "SELECT * FROM states WHERE name = '{}' ORDER BY states.id;\
+                ".format(
             sys.argv[4]
         )
         mycursor.execute(sql)
@@ -27,5 +28,3 @@ if __name__ == "__main__":
 
         mycursor.close()
         mydb.close()
-    except MySQLdb.Error:
-        pass
