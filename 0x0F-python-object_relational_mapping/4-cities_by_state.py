@@ -13,8 +13,12 @@ if __name__ == "__main__":
         charset="utf8",
     )
     mycursor = mydb.cursor()
+    sql = "SELECT cities.id, cities.name, states.name \
+            FROM cities, states \
+            WHERE cities.state_id = states.id \
+            ORDER BY cities.id;"
 
-    mycursor.execute("SELECT * FROM cities ORDER BY cities.id ASC;")
+    mycursor.execute(sql)
 
     querry = mycursor.fetchall()
 
