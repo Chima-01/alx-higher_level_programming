@@ -3,7 +3,7 @@
 import state and model from model_state module
 
 a script print all cities
-in database hbtn_0e_6_usa
+in database hbtn_0e_14_usa
 """
 from model_state import Base, State
 from model_city import City
