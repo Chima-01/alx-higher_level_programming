@@ -12,7 +12,8 @@ from sys import argv
 
 if __name__ == '__main__':
     db = f'mysql+mysqldb://{argv[1]}:{argv[2]}@localhost/{argv[3]}'
-    engine = create_engine(db, pool_pre_ping=True)
+    engine = create_engine(db)
+    Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
     session = Session()
