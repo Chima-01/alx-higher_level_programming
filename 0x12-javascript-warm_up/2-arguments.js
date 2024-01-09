@@ -3,10 +3,8 @@
 
 const arg = process.argv;
 
-if (arg.length <= 2) {
+if (arg.length > 2) {
   console.log('Arguments found');
 } else {
-  for (let i = 2; i < arg.length; i++) {
-    console.log(arg[i]);
-  }
+  console.log('No argument');
 }
