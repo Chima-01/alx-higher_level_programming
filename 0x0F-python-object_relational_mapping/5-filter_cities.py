@@ -28,7 +28,7 @@ if __name__ == "__main__":
         row = 0
         if (querry):
             for row in range(len_query):
-                if (row == (len_query) - 1):
+                if (row == (len_query - 1)):
                     print(querry[row][0])
                 else:
                     print(querry[row][0], end=", ")
