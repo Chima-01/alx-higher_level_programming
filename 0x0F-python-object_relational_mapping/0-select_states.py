@@ -1,9 +1,9 @@
 #!/usr/bin/python3
+"""
+    A script that prints all states in a database
+"""
 import MySQLdb
 import sys
-""" 
-    Intro to mysqldb 
-"""
 
 username, password, database = sys.argv[1:4]
 conn = MySQLdb.connect(
