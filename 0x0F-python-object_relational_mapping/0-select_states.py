@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-""" Intro to mysqldb """
 import MySQLdb
 import sys
+""" Intro to mysqldb """
 
 username, password, database = sys.argv[1:4]
 conn = MySQLdb.connect(
