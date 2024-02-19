@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 import MySQLdb
 import sys
-""" 
-    Intro to mysqldb 
-"""
+""" Intro to mysqldb """
 
 username, password, database = sys.argv[1:4]
 conn = MySQLdb.connect(
@@ -16,7 +14,8 @@ conn = MySQLdb.connect(
 )
 
 cur = conn.cursor()
-cur.execute("""SELECT * FROM states ORDER BY states.id ASC""")
+cur.execute("""SELECT * FROM states WHERE name LIKE 'N%'
+        ORDER BY states.id ASC""")
 query_rows = cur.fetchall()
 
 for row in query_rows:
