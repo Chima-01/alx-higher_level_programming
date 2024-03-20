@@ -10,6 +10,11 @@ function secondLargestNum (args) {
   if (args.length <= 3) {
     return 0;
   }
+
+  if (args.length === 4) {
+    return parseInt(args[2]) < parseInt(args[3]) ? parseInt(args[2]) : parseInt(args[3]);
+  }
+
   largest = parseInt(args[2]);
   secondLargest = largest;
 
