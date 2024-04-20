@@ -1,4 +1,4 @@
-#!/usr/binn/node
+#!/usr/bin/node
 // Returns the number of times a functions has been called
 
 let count = 0;
