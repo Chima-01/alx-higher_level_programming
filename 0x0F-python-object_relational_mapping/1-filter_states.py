@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 import MySQLdb
 import sys
-""" Intro to mysqldb """
+""" 
+    List all states in a database where name begins N
+"""
 
 username, password, database = sys.argv[1:4]
 conn = MySQLdb.connect(
