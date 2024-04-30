@@ -2,12 +2,11 @@
 import MySQLdb
 import sys
 
-"""
-    List all states in a database where name begins N
-"""
 
 if __name__ == "__main__":
-    """ module will not execute when imported """
+    """ 
+        module will not execute when imported
+    """
     username, password, database = sys.argv[1:4]
     conn = MySQLdb.connect(
         host="localhost",
