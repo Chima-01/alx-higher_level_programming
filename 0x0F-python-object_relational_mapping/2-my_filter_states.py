@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-import MySQLdb
-import sys
-
 """
     Display all value in a state that matches an argument
 """
+import MySQLdb
+import sys
+
 
 if __name__ == "__main__":
-    """ allows module not to work when imported """
     username, password, database, state_name = sys.argv[1:5]
     conn = MySQLdb.connect(
         host="localhost",

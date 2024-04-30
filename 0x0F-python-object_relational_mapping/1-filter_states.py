@@ -1,12 +1,12 @@
 #!/usr/bin/python3
+"""
+    list all states that starts with letter N
+"""
 import MySQLdb
 import sys
 
 
 if __name__ == "__main__":
-    """ 
-        module will not execute when imported
-    """
     username, password, database = sys.argv[1:4]
     conn = MySQLdb.connect(
         host="localhost",
