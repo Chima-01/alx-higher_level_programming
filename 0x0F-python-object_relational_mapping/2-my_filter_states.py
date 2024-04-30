@@ -7,6 +7,7 @@ import sys
 """
 
 if __name__ == "__main__":
+    """ allows module not to work when imported """
     username, password, database, state_name = sys.argv[1:5]
     conn = MySQLdb.connect(
         host="localhost",
