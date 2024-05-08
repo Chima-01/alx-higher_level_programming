@@ -27,9 +27,11 @@ if __name__ == "__main__":
 
     query_rows = cur.fetchall()
 
-    for row in query_rows:
-        print(*row, end=' ')
-    print()
-
+    i = 0
+    for i in range(len(query_rows)):
+        if i != len(query_rows) - 1:
+            print(*query_rows[i], end=', ')
+        else:
+            print(*query_rows[i])
     cur.close()
     conn.close()
