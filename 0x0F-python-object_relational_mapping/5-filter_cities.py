@@ -29,10 +29,10 @@ if __name__ == "__main__":
 
     i = 0
     for i in range(len(query_rows)):
-        if i != len(query_rows) - 1:
-            print(*query_rows[i], end=', ')
-        else:
+        if i == len(query_rows) - 1:
             print(*query_rows[i], end='')
+        else:
+            print(*query_rows[i], end=', ')
     print()
     cur.close()
     conn.close()
