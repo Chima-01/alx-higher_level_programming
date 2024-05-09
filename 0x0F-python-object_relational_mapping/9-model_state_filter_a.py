@@ -20,7 +20,10 @@ def list_states(user, passwd, database):
     session = Session()
 
     state_with_a = (
-        session.query(State).filter(State.name.like("%a%")).order_by(State.id).all()
+        session.query(State)
+               .filter(State.name.like("%a%"))
+               .order_by(State.id)
+               .all()
     )
 
     for state in state_with_a:
