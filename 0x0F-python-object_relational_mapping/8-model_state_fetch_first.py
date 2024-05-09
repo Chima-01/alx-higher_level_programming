@@ -21,7 +21,7 @@ def list_states(user, passwd, database):
 
     first_state = session.query(State).first()
     if not first_state:
-        print()
+        print('Nothing')
     else:
         print(f"{first_state.id}: {first_state.name}")
 
