@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-    A script that prints the State object with the name
-    passed as argument from the database
+    A script that deletes all State objects with a name containing
+    the letter a from the database hbtn_0e_6_usa
 """
 import sys
 from sqlalchemy import create_engine
@@ -19,11 +19,14 @@ def list_states(user, passwd, database):
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    update_state = (
-        session.query(State)
-               .filter(State.id == 2)
-               .update({"name": "New Mexico"})
+    state = (
+            session.query(State)
+                   .filter(State.name.like("%a%"))
+                   .all()
     )
+
+    for s in state:
+        session.delete(s)
 
     session.commit()
     session.close()
