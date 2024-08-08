@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # get the content size of a url
 
 if [ "$1" ];
