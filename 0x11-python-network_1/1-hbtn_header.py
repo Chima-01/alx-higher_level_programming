@@ -5,10 +5,9 @@
 """
 import sys
 import urllib.request
-
+""" declare request """
 
 req = urllib.request.Request(sys.argv[1])
 with urllib.request.urlopen(req) as response:
     html = response.info()
-
-print(html["X-Request-Id"])
+    print(html["X-Request-Id"])
