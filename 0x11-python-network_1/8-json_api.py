@@ -25,5 +25,5 @@ if __name__ == "__main__":
             print('No result')
         else:
             print('[{}] {}'.format(id, name))
-    except AttributeError:
+    except Exception:
         print('Not a valid JSON')
