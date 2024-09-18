@@ -9,20 +9,24 @@ request(arg, function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
-    let loop = 0;
     const completedTask = {};
     const results = JSON.parse(body);
+    let lastProcessedUserId = null;
 
-    for (let i = 0; i < results.length; i = loop) {
-      let taskComplete = 0;
-      const userId = results[i].userId;
-      for (let j = i; j < results.length; j++) {
-        if (results[j].userId === userId) {
-          if (results[j].completed) { taskComplete++; }
-          loop++;
+    for (let i = 0; i < results.length; i++) {
+      if (results[i].userId !== lastProcessedUserId) {
+        let taskComplete = 0;
+        const userId = results[i].userId;
+
+        for (let j = i; j < results.length; j++) {
+          if (results[j].userId === userId && results[j].completed) {
+            taskComplete++;
+          }
+
+          completedTask[userId] = taskComplete;
+          lastProcessedUserId = userId;
         }
       }
-      completedTask[userId] = taskComplete;
     }
     console.log(completedTask);
   }
